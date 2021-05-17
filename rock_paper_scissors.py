@@ -13,11 +13,11 @@ player_score = 0
 
 while True:
     player_choice = input(
-        "Rock, Paper or Scissors? (Type 'End' to exit game)"
-    ).capatalize()
+        "Rock, Paper or Scissors? (Type 'End' to exit game)  "
+    ).capitalize()
     if player_choice == computer_choice:
         print("Tie")
-    elif player == "Rock":
+    elif player_choice == "Rock":
         if computer_choice == "Paper":
             print("You lose! ", computer_choice, " covers ", player_choice)
             computer_score += 1
@@ -31,12 +31,12 @@ while True:
         else:
             print("You win! ", player_choice, " cuts ", computer_choice)
             player_score += 1
-    elif player_choice == "Rock":
-        if computer_choice == "Paper":
-            print("You lose! ", computer_choice, " covers ", player_choice)
+    elif player_choice == "Paper":
+        if computer_choice == "Scissors":
+            print("You lose! ", computer_choice, " cuts ", player_choice)
             computer_score += 1
         else:
-            print("You win! ", player_choice, " crushes ", computer_choice)
+            print("You win! ", player_choice, " covers ", computer_choice)
             player_score += 1
     elif player_choice == "End":
         print("Final Scores:")
@@ -44,5 +44,5 @@ while True:
         print("Player: ", player_score)
         break
     else:
-        print("That's an invalid move")
+        print("That's an invalid move! Check your spelling and try again.")
     computer_choice = random.choice(choices)
