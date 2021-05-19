@@ -1,3 +1,5 @@
+# An alarm clock using the datetime and playsound modules
+
 from datetime import datetime
 from playsound import playsound
 
@@ -17,5 +19,5 @@ while True:
         if alarm_hour == current_hour:
             if alarm_minute == current_minute:
                 print("Wake Up!")
-                playsound("")
+                playsound("alarm.mp3")
                 break
