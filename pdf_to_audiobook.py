@@ -8,10 +8,15 @@ import pyttsx3, PyPDF2
 # engine.say("I will speak this text")
 # engine.runAndWait()
 
-pdf_reader = PyPDF2.PdfFileReader(open("file.pdf", "rb"))
+# pdf = input("Audiobook File?\n")
+
+# Really Struggles to read the file correctly
+pdf_reader = PyPDF2.PdfFileReader(open("audiobook.pdf", "rb"), strict=False)
 engine = pyttsx3.init()
 for page in range(pdf_reader.numPages):
-    text = pdf_reader.getPage(page).extractText()
+    page = pdf_reader.getPage(page)
+    text = page.extractText()
+    print(text)
     engine.say(text)
     engine.runAndWait()
 engine.stop()
