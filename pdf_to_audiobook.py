@@ -4,8 +4,14 @@
 import pyttsx3, PyPDF2
 
 # Test Text to voice conversion
-engine = pyttsx3.init()
-engine.say("I will speak this text")
-engine.runAndWait()
+# engine = pyttsx3.init()
+# engine.say("I will speak this text")
+# engine.runAndWait()
 
-# pdf_reader = PyPDF2.PdfFileReader(open("file.pdf", "rb"))
+pdf_reader = PyPDF2.PdfFileReader(open("file.pdf", "rb"))
+engine = pyttsx3.init()
+for page in range(pdf_reader.numPages):
+    text = pdf_reader.getPage(page).extractText()
+    engine.say(text)
+    engine.runAndWait()
+engine.stop()
