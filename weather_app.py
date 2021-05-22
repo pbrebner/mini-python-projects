@@ -16,7 +16,6 @@ def weather(city):
         ),
         headers=headers,
     )
-    # x = request.get("https://www.google.com/search?q=montreal+weather&sxsrf=ALeKk03iMHO0_aE-qAreTfGkvESD7HOA7g%3A1621713013272&ei=dWCpYJ6KEMmvggeg6Y74AQ&oq=montreal+weather&gs_lcp=Cgdnd3Mtd2l6EAMyDAgjECcQnQIQRhCAAjIICAAQsQMQgwEyCAgAELEDEIMBMgsIABCxAxCDARDJAzIFCAAQkgMyAggAMgIIADICCAAyAggAMgIIADoHCCMQsAMQJzoHCAAQRxCwAzoKCC4QsAMQyAMQQzoHCCMQJxCdAjoLCC4QsQMQxwEQrwE6AgguSgUIOBIBMVD9zSlYpdUpYPnWKWgBcAJ4AYABnASIAZIJkgEHNy4xLjUtMZgBAKABAaoBB2d3cy13aXrIAQ_AAQE&sclient=gws-wiz&ved=0ahUKEwjemNXgh97wAhXJl-AKHaC0Ax8Q4dUDCA4&uact=5")
     print("searching....")
     soup = BeautifulSoup(x.text, "html.parser")
     location = soup.select("#wob_loc")[0].getText().strip()
